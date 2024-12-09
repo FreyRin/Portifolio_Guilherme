@@ -1,0 +1,192 @@
+:host {
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15rem;
+  
+      .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        text-align: left;
+        justify-content: center;
+        margin-top: 3rem;
+  
+        span {
+          color: var(--main-color);
+        }
+  
+        .text-animation {
+          font-size: 34px;
+          font-weight: 600;
+          min-width: 280px;
+  
+          & span {
+            position: relative;
+  
+            &::before {
+              content: 'UI | UX Designer ';
+              color: var(--main-color);
+              animation: words 12s infinite;
+            }
+  
+            &::after {
+              content: '';
+              position: absolute;
+              right: -8px;
+  
+              width: calc(100% + 8px);
+              height: 100%;
+  
+              background-color: var(--bg-color);
+              border-left: 3px solid var(--bg-color);
+  
+              animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+            }
+          }
+        }
+  
+        & h3 {
+          margin: 1rem 0 2rem 0;
+          font-size: 3.5rem;
+        }
+  
+        & h1 {
+          font-size: 7rem;
+          font-weight: 700;
+          margin-top: 1.5rem;
+          line-height: 1;
+        }
+  
+        p {
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 1.8;
+          max-width: 1000px;
+        }
+  
+        .social-icons {
+          a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+  
+            width: 4.5rem;
+            height: 4.5rem;
+  
+            margin: 3rem 1.5rem 3rem 0;
+            background: transparent;
+            border: 2px solid var(--main-color);
+            font-size: 2.5rem;
+            border-radius: 50%;
+            color: var(--main-color);
+            margin: 3rem 1.5rem 3rem 0;
+  
+            transition: 0.3s ease-in-out;
+  
+            &:hover {
+              color: var(--text-color);
+              transform: scale(1.3)translateY(-5px);
+              box-shadow: 0 0 25px var(--main-color);
+              background-color: var(--main-color);
+            }
+          }
+        }
+  
+        .btn-group {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+  
+          & a:nth-of-type(2) {
+            background-color: #000;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            box-shadow: 0 0 25px transparent;
+  
+            &:hover {
+              box-shadow: 0 0 25px var(--main-color);
+              background-color: var(--main-color);
+              color: #000;
+            }
+          }
+        }
+      }
+  
+      .home-img {
+        border-radius: 50%;
+  
+        & img {
+          position: relative;
+          top: 3rem;
+  
+          width: 32vw;
+          border-radius: 50%;
+          box-shadow: 0 0 25px var(--main-color);
+  
+          transition: 0.4s ease-in-out;
+          cursor: pointer;
+  
+          &:hover {
+            box-shadow: 0 0 25px var(--main-color),
+              0 0 50px var(--main-color),
+              0 0 100px var(--main-color),
+  
+          }
+        }
+      }
+    }
+  
+    @keyframes cursor {
+      to {
+        border-left: 2px solid var(--main-color);
+      }
+    }
+  
+    @keyframes words {
+  
+      0%,
+      33% {
+        content: 'UI | UX Designer ';
+      }
+  
+      34%,
+      66% {
+        content: 'Dev Frontend ';
+      }
+  
+      67%,
+      100% {
+        content: 'Dev Backend ';
+      }
+    }
+  
+    @keyframes typing {
+  
+      10%,
+      15%,
+      30%,
+      35%,
+      50%,
+      55%,
+      70%,
+      75%,
+      90%,
+      95% {
+        width: 0;
+      }
+  
+      5%,
+      20%,
+      25%,
+      40%,
+      45%,
+      60%,
+      65%,
+      80%,
+      85% {
+        width: calc(100% + 8px);
+      }
+    }
+  }
